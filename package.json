@@ -3,12 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srabaniupadhyaya/playwright-typescript.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@playwright/test": "^1.49.1"
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/srabaniupadhyaya/playwright-typescript/issues"
+  },
+  "homepage": "https://github.com/srabaniupadhyaya/playwright-typescript#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.5"
   }
 }
