@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/srabaniupadhyaya/playwright-typescript.git"
@@ -19,5 +21,8 @@
   "devDependencies": {
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.5"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.39.0"
   }
 }

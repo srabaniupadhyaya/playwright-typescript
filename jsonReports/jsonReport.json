@@ -48,7 +48,7 @@
         "testDir": "C:/Users/sraba/SrabaniImp/SrabaniStudyAutomation/playwright-typescript",
         "testIgnore": [],
         "testMatch": [
-          "tests/login.test.ts"
+          "tests/account.test.ts"
         ],
         "timeout": 30000
       }
@@ -61,14 +61,14 @@
   },
   "suites": [
     {
-      "title": "tests\\login.test.ts",
-      "file": "tests/login.test.ts",
+      "title": "tests\\account.test.ts",
+      "file": "tests/account.test.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Login test demo",
-          "ok": true,
+          "title": "test login with authenticated state",
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -80,28 +80,30 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 4774,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 16,
+                  "error": {
+                    "message": "Error: Error reading storage state from storageState.json:\nENOENT: no such file or directory, open 'C:\\Users\\sraba\\SrabaniImp\\SrabaniStudyAutomation\\playwright-typescript\\storageState.json'",
+                    "stack": "Error: Error reading storage state from storageState.json:\nENOENT: no such file or directory, open 'C:\\Users\\sraba\\SrabaniImp\\SrabaniStudyAutomation\\playwright-typescript\\storageState.json'"
+                  },
+                  "errors": [
+                    {
+                      "message": "Error: Error reading storage state from storageState.json:\nENOENT: no such file or directory, open 'C:\\Users\\sraba\\SrabaniImp\\SrabaniStudyAutomation\\playwright-typescript\\storageState.json'"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2025-01-26T19:11:06.089Z",
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\sraba\\SrabaniImp\\SrabaniStudyAutomation\\playwright-typescript\\test-results\\tests-login-Login-test-demo\\test-finished-1.png"
-                    }
-                  ]
+                  "startTime": "2025-03-06T17:03:50.619Z",
+                  "attachments": []
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
-          "id": "ef85df6096d4739f2c52-cf0b65859c6f521d730e",
-          "file": "tests/login.test.ts",
-          "line": 3,
+          "id": "6b22a5a3a78acd36085f-2452ec672dd347149719",
+          "file": "tests/account.test.ts",
+          "line": 6,
           "column": 5
         }
       ]
@@ -109,11 +111,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-01-26T19:11:05.509Z",
-    "duration": 5657.809,
-    "expected": 1,
+    "startTime": "2025-03-06T17:03:49.728Z",
+    "duration": 1695.9950000000001,
+    "expected": 0,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }
