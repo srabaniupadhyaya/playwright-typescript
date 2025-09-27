@@ -33,5 +33,14 @@ export default defineConfig({
         storageState: 'storageState.json',
       },
     },
+    {
+      name: 'independentchrome',
+      use: { 
+        browserName: 'chromium',
+        channel: 'chrome', // Ensures tests run in Google Chrome
+      },
+      testMatch: /.*\.spec\.ts/, // Runs only `.spec.ts` test files
+    },
+
   ],
 });
