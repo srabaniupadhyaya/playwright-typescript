@@ -1,10 +1,10 @@
 import {Locator,Page} from "@playwright/test"
 
-export class LandingPage{
+export class SignInPage{
    readonly page:Page // Can define a Base Page and extend from there
-   readonly emailInput:Locator
+   readonly userNameInput:Locator
    readonly passwordInput:Locator
-   readonly signInButton:Locator
+   readonly logInButton:Locator
 
    /**
     * 
@@ -12,16 +12,17 @@ export class LandingPage{
     */
    constructor(page:Page)
    {
-        this.emailInput = page.locator('input[type="email"]');
-        this.passwordInput = page.locator('input[type="password"]');
-        this.signInButton = page.locator('button[type="submit"]');
+       this.page = page;
+        this.userNameInput = page.locator('input[data-test="username"]');
+        this.passwordInput = page.locator('input[data-test="password"]');
+        this.logInButton = page.locator('input[data-test="login-button"]');
    }
 
-   async loginValidCreds()
+   async loginValidCred(userName:string,password:string )
    {
-        this.emailInput.fill('');
-        this.passwordInput.fill('');
-        this.signInButton.click();
+        await this.userNameInput.fill(userName);
+        await this.passwordInput.fill(password);
+        await this.logInButton.click();
    }
     
 }

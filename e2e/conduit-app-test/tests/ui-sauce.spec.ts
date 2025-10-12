@@ -1,10 +1,10 @@
 import {expect,test} from '@playwright/test';
 import config from '../../../config/config.json';
-import { LandingPage } from '../page-objects/landingPage';
 import { SignInPage } from '../page-objects/signInPage';
+import {InventoryPage} from "../page-objects/inventoryPage";
 
-let landingPage :LandingPage;
 let signInPage :SignInPage;
+let inventoryPage :InventoryPage;
 
 
 test.afterEach(async ({ page }, testInfo) => {
@@ -18,12 +18,10 @@ test.afterEach(async ({ page }, testInfo) => {
 });
 
 test('Should validate login authentication', async ({ page }) => {
-    await page.goto(config.hosts.conduitUi);
-    await page.setDefaultNavigationTimeout(2000);
-    await page.pause();
+    await page.goto(config.hosts.sauceUi);
+    page.setDefaultNavigationTimeout(2000);
     signInPage =new SignInPage(page);
-    landingPage =new LandingPage(page);
-    await landingPage.signInButton.click();
-    await signInPage.loginValidCreds('playwrightdemo@gmail.com', 'playwrightdemo');
-
+    inventoryPage = new InventoryPage(page);
+    await signInPage.loginValidCred(config.sauceUser.userName, config.sauceUser.password);
+    await expect(inventoryPage.productTitle).toBeVisible();
 })

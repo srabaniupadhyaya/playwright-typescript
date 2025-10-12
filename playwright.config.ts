@@ -11,7 +11,7 @@ const viewPort1080 = {width: 1920, height: 1080};
 
 export default defineConfig({
   // testDir: './tests',
-  testDir: './e2e',
+  testDir: './e2e/conduit-app-test/tests',
   timeout: 30000,
   expect: {
     timeout: 5000,
@@ -27,12 +27,12 @@ export default defineConfig({
   projects: [
     /* set up projects*/
     {
-      name:'Conduit Auth', testMatch :'',
+      name:'Sauce Auth', testMatch :'',
     },
 
     /* test projects*/
     {
-      name:'Desktop Chrome Conduit',
+      name:'Chrome Sauce',
       testMatch:'conduit-app-test/**/ui-*.spec.ts',
       use:{...devices['Desktop Chrome'],viewport:viewPort1080}
 
