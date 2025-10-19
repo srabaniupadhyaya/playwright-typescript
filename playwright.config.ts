@@ -8,17 +8,32 @@ const viewPort1080 = {width: 1920, height: 1080};
 // const envFile = process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : `.env`;
 // dotenv.config({ path: path.resolve(__dirname, envFile) });
 
-
+const viewPort2080 = {width: 1920, height: 1080};
 export default defineConfig({
   // testDir: './tests',
   testDir: './e2e/conduit-app-test/tests',
   timeout: 30000,
-  expect: {
-    timeout: 5000,
-  },
   fullyParallel: false,
   retries: 0,
   workers: 1,
+
+  expect:{
+    timeout: 5000,
+    /**
+     * Visual testing defaults
+     * 2 decimal places allowed else rounds upto 2 Dp
+     * we can override the maxDiffPixelRation per test if necessary
+     */
+    toHaveScreenshot:{
+      threshold:0.01, // https://playwright.dev/docs/api/class-pageassertions
+      maxDiffPixelRatio:0.01
+    }
+  },
+
+  /* Folder for test artifacts */
+  // outputDir: 'outputs/test-results'
+  // reporter:[]
+
   use: {
     headless: false,
     trace: 'retain-on-failure',
