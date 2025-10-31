@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test"
+    "test": "CI=true npx playwright test",
+    "ui": "npx playwright test --ui --update-snapshots",
+    "report": "npx playwright show-report outputs/report-html"
+
   },
   "repository": {
     "type": "git",
