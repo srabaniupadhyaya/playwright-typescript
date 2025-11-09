@@ -1,6 +1,8 @@
-import {Locator,Page} from "@playwright/test"
+import {Locator,Page} from "@playwright/test";
+import BasePage from "./basePage";
 
-export class SignInPage{
+
+export class SignInPage extends BasePage{
    readonly page:Page // Can define a Base Page and extend from there
    readonly userNameInput:Locator
    readonly passwordInput:Locator
@@ -12,6 +14,7 @@ export class SignInPage{
     */
    constructor(page:Page)
    {
+       super(page);
        this.page = page;
         this.userNameInput = page.locator('input[data-test="username"]');
         this.passwordInput = page.locator('input[data-test="password"]');
@@ -20,9 +23,9 @@ export class SignInPage{
 
    async loginValidCred(userName:string,password:string )
    {
-        await this.userNameInput.fill(userName);
-        await this.passwordInput.fill(password);
-        await this.logInButton.click();
+        await this.fillFormField(this.userNameInput,userName);
+        await this.fillFormField(this.passwordInput,password);
+        await this.clickElement(this.logInButton)
    }
     
 }
