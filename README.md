@@ -17,7 +17,7 @@ This project contains end-to-end tests using Playwright, packaged with Docker Co
 To start the project using Docker Compose, run:
 
 ```bash
-docker-compose -f docker-compose.yml up
+docker-compose up
 
 ## 🐳 Running with Docker (without Compose)
 
