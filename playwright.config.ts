@@ -35,7 +35,7 @@ export default defineConfig({
 
   // Shared test settings
   use: {
-    headless: false,
+    headless: true,
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     viewport: viewPort1080,  // Optional: applies your custom viewport

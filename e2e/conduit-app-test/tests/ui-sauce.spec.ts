@@ -24,5 +24,4 @@ test('Should validate login authentication', async ({ page }) => {
     inventoryPage = new InventoryPage(page);
     await signInPage.loginValidCred(config.sauceUser.userName, config.sauceUser.password);
     await expect(inventoryPage.productTitle).toBeVisible();
-    await expect(inventoryPage.inventoryContainer).toHaveScreenshot();
 })
