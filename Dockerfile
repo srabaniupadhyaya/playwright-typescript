@@ -1,18 +1,16 @@
-# Use Playwright base image
-FROM mcr.microsoft.com/playwright:v1.44.0
+FROM mcr.microsoft.com/playwright:v1.56.1-noble
 
-# Set working directory
 WORKDIR /app
 
-# Copy package.json and install dependencies
+# Copy package files and install dependencies
 COPY package.json package-lock.json ./
-RUN npm install -g playwright
+RUN npm ci
 
-# Install Playwright with dependencies
-RUN npx playwright install --with-deps
+# Install Playwright browsers
+RUN npx -y playwright@1.56.1 install --with-deps
 
-# Copy all project files
+# Copy your project files
 COPY . .
 
-# Start Playwright tests
-CMD ["/bin/sh", "-c", "npx playwright test"]
+# Use shell form to ensure npx resolves correctly
+CMD ["npm", "test"]

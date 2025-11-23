@@ -1,0 +1,8 @@
+version: '3'
+services:
+  playwright-type-test:
+    image: playwright
+    build: .
+    container_name: playwright_docker
+    command: npm run test
+      -

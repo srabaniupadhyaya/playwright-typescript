@@ -7,7 +7,6 @@
     "test": "CI=true npx playwright test",
     "ui": "npx playwright test --ui --update-snapshots",
     "report": "npx playwright show-report outputs/report-html"
-
   },
   "repository": {
     "type": "git",
@@ -22,7 +21,7 @@
   },
   "homepage": "https://github.com/srabaniupadhyaya/playwright-typescript#readme",
   "devDependencies": {
-    "@playwright/test": "^1.49.1",
+    "@playwright/test": "^1.56.1",
     "@types/node": "^22.10.5"
   },
   "dependencies": {
